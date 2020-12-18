@@ -1,0 +1,10 @@
+.vacas {
+    background-image: "image/vacas.jpg";
+}
+
+pre,
+p {
+    font-size: 1.5em;
+    color: #FE7F88;
+    background-color: transparent;
+}
