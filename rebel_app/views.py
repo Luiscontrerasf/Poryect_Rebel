@@ -13,3 +13,16 @@ def salado(request):
 
 def dulce(request):
     return render(request, 'Dulces.html')
+
+def contacto(request):
+    return render(request, 'contacto.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def somos(request):
+    return render(request, 'somos.html')
+

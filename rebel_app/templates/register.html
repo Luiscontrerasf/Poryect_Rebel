@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -8,7 +9,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="image/favicon/rv.ico">
     <title>Rebel Veg!</title>
 
@@ -40,14 +40,14 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="login.css" rel="stylesheet">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
 
 </head>
 
 <body class="text-center">
 
     <form class="form-signin" id="form-login" method="POST">
-        <img class="mb-4" src="image/icons/RV.png" alt="" width="150" height="150">
+        <img class="mb-4" src="{% static 'image/icons/RV.png'%}" alt="" width="150" height="150">
         <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
         <label for="inputName" class="sr-only">Nombre</label>
         <input type="name" id="inputName" class="form-control" placeholder="Nombre" name="idName" required>
@@ -58,7 +58,7 @@
         <label for="inputPassword" class="sr-only">Contraseña</label>
         <input type="password" id="inputREpassword" class="form-control" placeholder="Contraseña" name="idReContraseña" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>
-        <a href="index2.html">Home</a>
+        <a href="/">Home</a>
 
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
