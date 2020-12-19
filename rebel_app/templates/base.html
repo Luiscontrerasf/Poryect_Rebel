@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="{% static 'image/favicon/rv.ico' %}">
     <title>Rebel Veg!</title>
 
+    {% load pwa %}
+    {% progressive_web_app_meta %}
+
 </head>
 
 <body>
@@ -34,7 +37,7 @@
                 Productos
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Tortas.html">Tortas</a>
+                            <a class="dropdown-item" href="{% url 'torta'%}">Tortas</a>
                             <a class="dropdown-item" href="Salados.html">Salados</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="Dulces.html">Dulces</a>
@@ -65,7 +68,7 @@
                         <a href="somos.html">¿Quienes Somos?</a>
                     </div>
                     <div class="col-12 col-lg">
-                        <a href="https://www.instagram.com/rebel_veg/"><img src="image/icons/instagram2.png" width="30px" height="30px"></a>
+                        <a href="https://www.instagram.com/rebel_veg/"><img src="{% static 'image/icons/instagram2.png' %}" width="30px" height="30px"></a>
                     </div>
                     <div class="col-12 col-lg">
                         <a href="contacto.html">Contactanos</a>

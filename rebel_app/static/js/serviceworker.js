@@ -2,8 +2,7 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
     '/',
-    '/static/img/logoCelesteBici.png',
-    '/static/css/index2.css',
+    '/static/css/index.css',
 ];
 
 self.addEventListener('install', function(event) {
