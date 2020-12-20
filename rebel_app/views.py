@@ -1,4 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import (
+    ListView
+)
+from django.http import request
+from .models import producto
+
 
 # Create your views here.
 
@@ -25,4 +31,16 @@ def register(request):
 
 def somos(request):
     return render(request, 'somos.html')
+
+def pedidos(request):
+    return render(request, 'pedidos.html')
+
+#def producto_list(request):
+#   productos = Producto.objects.all()
+ #   return render(request,'pedidos.html', {'productos': productos})
+
+class ListarProductos(ListView):
+    template_name = 'pedidos.html'
+    context_object_name = 'ListaProd'
+    model = producto
 

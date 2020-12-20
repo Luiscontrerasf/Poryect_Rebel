@@ -1,3 +1,4 @@
+#from django.contrib import admin
 from django.urls import path
 from . import views
 
@@ -10,4 +11,6 @@ urlpatterns = [
     path('login.html', views.login, name="login"),
     path('register.html', views.register, name="register"),
     path('somos.html', views.somos, name="somos"),
+    path('pedidos.html', views.ListarProductos.as_view(), name="pedido"),
+
 ]
