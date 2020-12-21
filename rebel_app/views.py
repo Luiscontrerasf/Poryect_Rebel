@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
-    ListView
+    ListView,
+    CreateView,
+    UpdateView,
 )
 from django.http import request
 from .models import producto
@@ -43,4 +46,19 @@ class ListarProductos(ListView):
     template_name = 'pedidos.html'
     #context_object_name = 'ListaProd'
     model = producto
+
+
+class ProductoCreateView(CreateView):
+    template_name = "agrega_prod.html"
+    model = producto
+    fields = ('__all__')
+    success_url = reverse_lazy('temp_app:agregar')
+
+
+class ProductoUpdateView(UpdateView):
+    model = producto
+    template_name = "modificar_prod.html"
+    fields = ('__all__')
+
+    
 

@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="grid-x">
+    <h1 class="cell">
+        Modificar Producto
+    </h1>
+    <div class="cell">
+        <form method="POST">{% csrf_token %} {{ form.as_p }}
+            <button type="submit">Actualizar</button>
+    </div>
+</div>
+{{form.as_p}} {% endblock %}

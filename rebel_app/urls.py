@@ -2,6 +2,8 @@
 from django.urls import path
 from . import views
 
+app_name = "temp_app"
+
 urlpatterns = [
     path('', views.home, name="home"),
     path('Tortas.html', views.torta, name="torta"),
@@ -12,5 +14,7 @@ urlpatterns = [
     path('register.html', views.register, name="register"),
     path('somos.html', views.somos, name="somos"),
     path('pedidos.html', views.ListarProductos.as_view(), name="pedido"),
+    path('agrega_prod.html', views.ProductoCreateView.as_view(), name="agregar"),
+    path('modificar_prod.html', views.ProductoUpdateView.as_view(), name="modificar"),
 
 ]
