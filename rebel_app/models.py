@@ -11,8 +11,7 @@ class producto(models.Model):
     imagen = models.ImageField()
 
     def __str__(self):
-        return self.name
-
+        return self.name + ' ' + self.tipo_prod + ' ' + self.description + ' ' + self.price 
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=30)

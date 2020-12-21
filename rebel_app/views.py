@@ -41,6 +41,6 @@ def pedidos(request):
 
 class ListarProductos(ListView):
     template_name = 'pedidos.html'
-    context_object_name = 'ListaProd'
+    #context_object_name = 'ListaProd'
     model = producto
 
