@@ -41,7 +41,15 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="Dulces.html">Dulces</a>
                         </div>
-                    </li>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recetas</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'listar_receta' %}">Lista Recetas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'agregar_receta' %}">Agregar Receta</a>
+                        </div>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -67,13 +75,13 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12 col-lg">
-                        <a href="somos.html">¿Quienes Somos?</a>
+                        <a href="{% url 'somos' %}">¿Quienes Somos?</a>
                     </div>
                     <div class="col-12 col-lg">
                         <a href="https://www.instagram.com/rebel_veg/"><img src="{% static 'image/icons/instagram2.png' %}" width="30px" height="30px"></a>
                     </div>
                     <div class="col-12 col-lg">
-                        <a href="contacto.html">Contactanos</a>
+                        <a href="{% url 'contacto' %}">Contactanos</a>
                     </div>
                 </div>
             </div>

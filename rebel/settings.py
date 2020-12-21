@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rebel_app',
+    'crispy_forms',
     #'social_django',
     'pwa',
     #'rest_framework', 
