@@ -46,18 +46,15 @@
 
 <body class="text-center">
 
-    <form class="form-signin" id="form-login" method="POST">
+    <form id="form" method="POST" class="form-signin">
         <img class="mb-4" src="{% static 'image/icons/RV.png'%}" alt="" width="150" height="150">
         <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
-        <label for="inputName" class="sr-only">Nombre</label>
-        <input type="name" id="inputName" class="form-control" placeholder="Nombre" name="idName" required>
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="idEmail" required>
-        <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="idContraseña" required>
-        <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputREpassword" class="form-control" placeholder="Contraseña" name="idReContraseña" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Registrar"></>
         <a href="/">Home</a>
 
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>

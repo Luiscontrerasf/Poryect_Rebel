@@ -1,6 +1,8 @@
 from rebel_app.models import Receta
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RecetaForm
+from .forms import CustomUserForm
+from django.contrib.auth import login, authenticate
 
 # Create your views here.
 
@@ -23,7 +25,22 @@ def login(request):
     return render(request, 'login.html')
 
 def register(request):
-    return render(request, 'register.html')
+    data= {
+        'form':CustomUserForm()
+    }
+
+    if request.method == 'POST': 
+        formulario = CustomUserForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            #autenticar al usuario y rediridirlo al inicio
+            username = formulario.cleaned_data['username']
+            password = formulario.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            #login(request, user)
+            return redirect(to='index2')
+    
+    return render(request, 'register.html', data)
 
 def somos(request):
     return render(request, 'somos.html')
