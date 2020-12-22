@@ -3,6 +3,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RecetaForm
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
+from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+)
+from django.http import request
+from .models import producto
+
 
 # Create your views here.
 
@@ -45,6 +54,7 @@ def register(request):
 def somos(request):
     return render(request, 'somos.html')
 
+#gabo
 def agregar_receta(request):
     data = {
         'form': RecetaForm()
@@ -88,4 +98,39 @@ def eliminar_receta(request, id):
     receta.delete()
     return redirect(to="listar_receta")
 
+#luis
+def pedidos(request):
+    return render(request, 'pedidos.html')
+
+#def producto_list(request):
+#   productos = Producto.objects.all()
+ #   return render(request,'pedidos.html', {'productos': productos})
+
+class ListarProductos(ListView):
+    template_name = 'pedidos.html'
+    #context_object_name = 'ListaProd'
+    model = producto
+
+
+class ProductoCreateView(CreateView):
+    template_name = "agrega_prod.html"
+    model = producto
+    fields = ('__all__')
+    success_url = reverse_lazy('temp_app:agregar')
+
+
+class ProductoUpdateView(UpdateView):
+    template_name = "modificar_prod.html"
+    model = producto
+    fields = ('__all__')
+    
+    success_url = reverse_lazy('temp_app:modificar')
+
+  #  def post(self,request, *args, **kwargs):
+   #     self.object = self.get_object()
+    #    print('************METOD POST*************')
+     #   print(request.POST)
+      #  print(request.POST ['name'])
+       # return super().post(request, *args, **kwargs)
+    
 
