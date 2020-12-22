@@ -56,9 +56,17 @@ class ProductoCreateView(CreateView):
 
 
 class ProductoUpdateView(UpdateView):
-    model = producto
     template_name = "modificar_prod.html"
+    model = producto
     fields = ('__all__')
+    
+    success_url = reverse_lazy('temp_app:modificar')
 
+  #  def post(self,request, *args, **kwargs):
+   #     self.object = self.get_object()
+    #    print('************METOD POST*************')
+     #   print(request.POST)
+      #  print(request.POST ['name'])
+       # return super().post(request, *args, **kwargs)
     
 

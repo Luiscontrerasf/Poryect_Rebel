@@ -6,15 +6,15 @@ app_name = "temp_app"
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('Tortas.html', views.torta, name="torta"),
+    path('Tortas/', views.torta, name="torta"),
     path('Dulces.html', views.dulce, name="dulce"),
-    path('Salados.html', views.salado, name="salado"),
+    path('Salados/', views.salado, name="salado"),
     path('contacto.html', views.contacto, name="contacto"),
     path('login.html', views.login, name="login"),
     path('register.html', views.register, name="register"),
     path('somos.html', views.somos, name="somos"),
     path('pedidos.html', views.ListarProductos.as_view(), name="pedido"),
     path('agrega_prod.html', views.ProductoCreateView.as_view(), name="agregar"),
-    path('modificar_prod.html', views.ProductoUpdateView.as_view(), name="modificar"),
+    path('modificar_prod.html/<pk>/', views.ProductoUpdateView.as_view(), name="modificar"),
 
 ]
