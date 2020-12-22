@@ -64,7 +64,17 @@
                     <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                 </svg>
-                
+                {% if user.is_authenticated %}
+                <div class="d-flex flex-row justify-content-around"></div>
+                <li>
+                 <a href="#">Usuario: {{user.username}} <hr></a>
+                </li>
+                <li>
+                  <a href="{% url 'logout'%}">Cerrar sesión</a>
+                </li>
+                {% else %}
+                <a href="login.html" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+                {% endif %}
             </form>
         </div>
     </nav>
