@@ -1,3 +1,4 @@
+from django.db.models.fields.files import ImageField
 from rebel_app.models import Receta
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RecetaForm
@@ -65,7 +66,7 @@ def agregar_receta(request):
         if formulario.is_valid():
             formulario.save()
             data["mensaje"] = "Receta Agregada correctamente"
-            return redirect(to='listar_receta')
+            return redirect(to='temp_app:listar_receta')
         else:
             data["form"] = formulario
     
@@ -88,7 +89,7 @@ def modificar_receta(request, id):
         formulario = RecetaForm(data=request.POST, instance=receta, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            return redirect(to='listar_receta')
+            return redirect(to='temp_app:listar_receta')
         data["form"] = formulario
         
     return render(request, 'receta/modificar.html', data)
@@ -96,7 +97,7 @@ def modificar_receta(request, id):
 def eliminar_receta(request, id):
     receta = get_object_or_404(Receta, id=id)
     receta.delete()
-    return redirect(to="listar_receta")
+    return redirect(to="temp_app:listar_receta")
 
 #luis
 def pedidos(request):
