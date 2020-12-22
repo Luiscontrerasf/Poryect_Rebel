@@ -125,7 +125,7 @@ class ProductoUpdateView(UpdateView):
     model = producto
     fields = ('__all__')
     
-    success_url = reverse_lazy('temp_app:modificar')
+    success_url = reverse_lazy('temp_app:pedido')
 
   #  def post(self,request, *args, **kwargs):
    #     self.object = self.get_object()

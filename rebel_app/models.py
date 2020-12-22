@@ -9,9 +9,9 @@ fs = FileSystemStorage(location='/media/photos')
 
 class Receta(models.Model):
     nombre = models.CharField(max_length=30)
-    ingredientes = models.TextField();
-    preparacion = models.TextField();
-    fecha = models.DateTimeField(default=timezone.now);
+    ingredientes = models.TextField()
+    preparacion = models.TextField()
+    fecha = models.DateTimeField(default=timezone.now)
     imagen = models.ImageField(upload_to="recetas", null = True)
     
     def __str__(self):
