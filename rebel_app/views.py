@@ -48,7 +48,7 @@ def register(request):
             password = formulario.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             #login(request, user)
-            return redirect(to='index2')
+            return redirect(to='temp_app:index2')
     
     return render(request, 'register.html', data)
 
