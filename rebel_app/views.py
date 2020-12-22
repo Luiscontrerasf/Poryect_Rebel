@@ -9,6 +9,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 from django.http import request
 from .models import producto
@@ -133,5 +134,13 @@ class ProductoUpdateView(UpdateView):
      #   print(request.POST)
       #  print(request.POST ['name'])
        # return super().post(request, *args, **kwargs)
+
+class ProductoDeleteView(DeleteView):
+    template_name = "pedidos.html"
+    model = producto
+
+    success_url = reverse_lazy('temp_app:pedido')
+    
+
     
 
