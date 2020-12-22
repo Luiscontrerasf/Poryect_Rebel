@@ -117,7 +117,7 @@ class ListarProductos(ListView):
 class ProductoCreateView(CreateView):
     template_name = "agrega_prod.html"
     model = producto
-    fields = ['name','tipo_prod','description','price']
+    fields = ['name','tipo_prod','description','price','imagen']
     success_url = reverse_lazy('temp_app:agregar')
 
 
