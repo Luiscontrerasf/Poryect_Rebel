@@ -1,4 +1,4 @@
-#from django.contrib import admin
+from django.contrib import admin
 from django.urls import path
 from . import views
 
@@ -7,12 +7,12 @@ app_name = "temp_app"
 urlpatterns = [
     path('', views.home, name="home"),
     path('Tortas/', views.torta, name="torta"),
-    path('Dulces.html', views.dulce, name="dulce"),
-    path('Salados.html', views.salado, name="salado"),
+    path('Dulces/', views.dulce, name="dulce"),
+    path('Salados/', views.salado, name="salado"),
     path('contacto/', views.contacto, name="contacto"),
-    path('login.html', views.login, name="login"),
-    path('register.html', views.register, name="register"),
-    path('somos.html', views.somos, name="somos"),
+    path('login/', views.login, name="login"),
+    path('register/', views.register, name="register"),
+    path('somos/', views.somos, name="somos"),
     
     path('agregar/', views.agregar_receta, name="agregar_receta"),
     path('listar/', views.listar_receta, name="listar_receta"),

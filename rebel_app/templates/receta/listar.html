@@ -24,8 +24,8 @@
                     <td><a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Ver_Elaboracion" data-dismiss="modal">Ver Mas</a></td>
                     <td>{{ r.fecha | date }}</td>
                    <td>
-                       <a href="{% url 'modificar_receta' r.id %}" class="btn btn-primary btn-sm">Modificar</a>
-                       <a href="{% url 'eliminar_receta' r.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                       <a href="{% url 'temp_app:modificar_receta' r.id %}" class="btn btn-primary btn-sm">Modificar</a>
+                       <a href="{% url 'temp_app:eliminar_receta' r.id %}" class="btn btn-danger btn-sm">Eliminar</a>
                    </td>
                 </tr>
                 

@@ -39,18 +39,18 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'torta' %}">Tortas</a>
-                            <a class="dropdown-item" href="Salados.html">Salados</a>
+                            <a class="dropdown-item" href="{% url 'temp_app:torta' %}">Tortas</a>
+                            <a class="dropdown-item" href="{% url 'temp_app:salado' %}">Salados</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Dulces.html">Dulces</a>
+                            <a class="dropdown-item" href="{% url 'temp_app:dulce' %}">Dulces</a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recetas</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'listar_receta' %}">Lista Recetas</a>
+                            <a class="dropdown-item" href="{% url 'temp_app:listar_receta' %}">Lista Recetas</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'agregar_receta' %}">Agregar Receta</a>
+                            <a class="dropdown-item" href="{% url 'temp_app:agregar_receta' %}">Agregar Receta</a>
                         </div>
                 </li>
             </ul>
@@ -70,10 +70,10 @@
                  <a href="#">Usuario: {{user.username}} <hr></a>
                 </li>
                 <li>
-                  <a href="{% url 'logout'%}">Cerrar sesión</a>
+                  <a href="#">Cerrar sesión</a>
                 </li>
                 {% else %}
-                <a href="login.html" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+                <a href="{% url 'temp_app:login' %}" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
                 {% endif %}
             </form>
         </div>
@@ -88,13 +88,13 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12 col-lg">
-                        <a href="{% url 'somos' %}">¿Quienes Somos?</a>
+                        <a href="{% url 'temp_app:somos' %}">¿Quienes Somos?</a>
                     </div>
                     <div class="col-12 col-lg">
                         <a href="https://www.instagram.com/rebel_veg/"><img src="{% static 'image/icons/instagram2.png' %}" width="30px" height="30px"></a>
                     </div>
                     <div class="col-12 col-lg">
-                        <a href="{% url 'contacto' %}">Contactanos</a>
+                        <a href="{% url 'temp_app:contacto' %}">Contactanos</a>
                     </div>
                 </div>
             </div>

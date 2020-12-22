@@ -21,7 +21,7 @@ class producto(models.Model):
     tipo_prod = models.CharField('Tipo',max_length=10)#,choices=tipo_prod_CHOISES)    
     description = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to="productos", null = True)
 
     def __str__(self):
         return self.name + ' ' + self.tipo_prod + ' ' + self.description + ' ' + self.price 
