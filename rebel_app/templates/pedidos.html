@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="grid-container">
     <div class="grid-x">
-        <h1 class="cell">Lista Productos</h1>
+        <h1 class="cell large-auto">Lista Productos</h1>
         <div class="grid-x grid-margin-x">
-            <div class="cell large-">
+            <div class="cell large-auto">
                 <input type="text" placeholder="Buscar producto">
             </div>
             <div class="cell large-2">
@@ -11,36 +11,36 @@
 
             </div>
         </div>
-        <div class="cell">
-            aqui botones
-            <div class="cell">
-                <table>
-                    <thead>
-                        <tr>
-                            <th width="200">NOMBRE</th>
-                            <th width="150">TIPO</th>
-                            <th width="350">DESCRIPCION</th>
-                            <th width="150">PRECIO</th>
-                            <th width="150">ACCION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for e in object_list%}
-                        <tr>
-                            <td>{{ e.name}}</td>
-                            <td>{{ e.tipo_prod}}</td>
-                            <td>{{ e.description}}</td>
-                            <td>{{ e.price}}</td>
-                            <td><a class="button success" href="#">Editar</a></td>
-                            <td><a class="button alert" href="#">Eliminar</a></td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        <table>
+            <thead>
+                <tr>
+                    <th width="200">NOMBRE</th>
+                    <th width="150">TIPO</th>
+                    <th width="350">DESCRIPCION</th>
+                    <th width="150">PRECIO</th>
+                    <th width="200">imagen</th>
+                    <th width="350">ACCION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in object_list%}
+                <tr>
+                    <td>{{ e.name}}</td>
+                    <td>{{ e.tipo_prod}}</td>
+                    <td>{{ e.description}}</td>
+                    <td>{{ e.price}}</td>
+                    <td img src="{​​​​​{​​​​​ r.imagen.url }​​​​​}​​​​​" alt="">{{ e.imagen}}</td>
+                    <td><a class="button success" href="{%url 'temp_app:modificar' e.id %}">Editar</a>
+                        <a class="button alert" href="{%url 'temp_app:modificar' e.id %}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-            </div>
-        </div>
     </div>
+</div>
+</div>
 
 </div>
 
