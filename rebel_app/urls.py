@@ -22,6 +22,6 @@ urlpatterns = [
     path('pedidos.html', views.ListarProductos.as_view(), name="pedido"),
     path('agrega_prod.html', views.ProductoCreateView.as_view(), name="agregar"),
     path('modificar_prod.html/<pk>/', views.ProductoUpdateView.as_view(), name="modificar"),
-    path('delete.html/<pk>/', views.ProductoUpdateView.as_view(), name="eliminar"),
+    path('delete.html/<pk>/', views.ProductoDeleteView.as_view(), name="eliminar"),
 
 ]

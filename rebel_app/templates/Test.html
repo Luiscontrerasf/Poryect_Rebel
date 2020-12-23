@@ -1,53 +1,29 @@
-<form>
-    <div class="form-row">
-        <h1>Modificar Producto</h1>
-        <div class="form-group col-md-6">
-            <label>Nombre:
-            {{form.name}}    
-        </label>
-
-        </div>
-        <div class="form-group col-md-6">
-            <label>Tipo:
-            {{form.tipo_prod}}
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Descripcion:
-            {{form.description}}
-        </label>
-    </div>
-    <div class="form-group">
-        <label>Precio:
-            {{form.price}}
-        </label>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>Foto:
-            {{form.imagen}}
-        </label>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+<table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+    </tbody>
+</table>

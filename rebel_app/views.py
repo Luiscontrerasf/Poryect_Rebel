@@ -35,6 +35,9 @@ def contacto(request):
 def login(request):
     return render(request, 'login.html')
 
+def logout(request):
+    return render(request, 'temp_app:logout')
+
 def register(request):
     data= {
         'form':CustomUserForm()
@@ -100,6 +103,8 @@ def eliminar_receta(request, id):
     receta.delete()
     return redirect(to="temp_app:listar_receta")
 
+
+
 #luis
 def pedidos(request):
     return render(request, 'pedidos.html')
@@ -109,7 +114,7 @@ def pedidos(request):
  #   return render(request,'pedidos.html', {'productos': productos})
 
 class ListarProductos(ListView):
-    template_name = 'pedidos.html'
+    template_name = "pedidos.html"
     #context_object_name = 'ListaProd'
     model = producto
 
@@ -139,7 +144,7 @@ class ProductoDeleteView(DeleteView):
     template_name = "pedidos.html"
     model = producto
 
-    success_url = reverse_lazy('temp_app:pedido')
+    success_url = reverse_lazy('temp_app:eliminar')
     
 
     
