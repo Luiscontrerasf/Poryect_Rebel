@@ -9,6 +9,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 from django.http import request
 from .models import producto
@@ -33,6 +34,9 @@ def contacto(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def logout(request):
+    return render(request, 'temp_app:logout')
 
 def register(request):
     data= {
@@ -99,6 +103,11 @@ def eliminar_receta(request, id):
     receta.delete()
     return redirect(to="temp_app:listar_receta")
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Lcontreras
 #luis
 def pedidos(request):
     return render(request, 'pedidos.html')
@@ -108,7 +117,7 @@ def pedidos(request):
  #   return render(request,'pedidos.html', {'productos': productos})
 
 class ListarProductos(ListView):
-    template_name = 'pedidos.html'
+    template_name = "pedidos.html"
     #context_object_name = 'ListaProd'
     model = producto
 
@@ -116,7 +125,7 @@ class ListarProductos(ListView):
 class ProductoCreateView(CreateView):
     template_name = "agrega_prod.html"
     model = producto
-    fields = ('__all__')
+    fields = ['name','tipo_prod','description','price','imagen']
     success_url = reverse_lazy('temp_app:agregar')
 
 
@@ -125,7 +134,7 @@ class ProductoUpdateView(UpdateView):
     model = producto
     fields = ('__all__')
     
-    success_url = reverse_lazy('temp_app:modificar')
+    success_url = reverse_lazy('temp_app:pedido')
 
   #  def post(self,request, *args, **kwargs):
    #     self.object = self.get_object()
@@ -133,5 +142,13 @@ class ProductoUpdateView(UpdateView):
      #   print(request.POST)
       #  print(request.POST ['name'])
        # return super().post(request, *args, **kwargs)
+
+class ProductoDeleteView(DeleteView):
+    template_name = "pedidos.html"
+    model = producto
+
+    success_url = reverse_lazy('temp_app:eliminar')
+    
+
     
 

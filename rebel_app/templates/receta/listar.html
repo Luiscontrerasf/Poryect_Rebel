@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
+=======
+{% extends 'base.html' %} {% load static %} {% block content %}
+>>>>>>> Lcontreras
 <link rel="stylesheet" href="{% static 'css/listar.css'%}">
 <div class="card">
     <div class="card-body">
@@ -16,6 +20,7 @@
                 <th>Publicacion</th>
                 <th>Opciones</th>
             </tr>
+<<<<<<< HEAD
         
             {% for r in recetas %}
         
@@ -37,10 +42,34 @@
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">Ingredientes</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+=======
+
+            {% for r in recetas %}
+
+            <tr>
+                <td>{{ r.nombre | title }}</td>
+                <td><img src="{{ r.imagen.url }}" alt=""></td>
+                <td><a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Ver_Ingrediente" data-dismiss="modal">Ver Mas</a></td>
+                <td><a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Ver_Elaboracion" data-dismiss="modal">Ver Mas</a></td>
+                <td>{{ r.fecha | date }}</td>
+                <td>
+                    <a href="{% url 'temp_app:modificar_receta' r.id %}" class="btn btn-primary btn-sm">Modificar</a>
+                    <a href="{% url 'temp_app:eliminar_receta' r.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+
+            <div class="modal fade" id="Ver_Ingrediente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ingredientes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+>>>>>>> Lcontreras
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
+<<<<<<< HEAD
                           <h6 id="modalbody">{{ r.ingredientes }}</h6>
                         </div>
                         <div class="modal-footer">
@@ -56,10 +85,28 @@
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">Elaboracion</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+=======
+                            <h6 id="modalbody">{{ r.ingredientes }}</h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="Ver_Elaboracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Elaboracion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+>>>>>>> Lcontreras
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
+<<<<<<< HEAD
                           <h6 id="modalbody">{{ r.preparacion }}</h6>
                         </div>
                         <div class="modal-footer">
@@ -69,6 +116,17 @@
                     </div>
                   </div>
         
+=======
+                            <h6 id="modalbody">{{ r.preparacion }}</h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+>>>>>>> Lcontreras
             {% endfor %}
         </table>
     </div>
