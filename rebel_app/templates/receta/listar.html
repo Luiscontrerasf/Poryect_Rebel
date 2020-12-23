@@ -10,6 +10,7 @@
         <table class="table table-striped table-hover table-responsive-sm">
             <tr>
                 <th>Nombre</th>
+                <th>Imagen</th>
                 <th>Ingredientes</th>
                 <th>Elaboracion</th>
                 <th>Publicacion</th>
@@ -20,6 +21,7 @@
         
                 <tr>
                     <td>{{ r.nombre | title }}</td>
+                    <td> <img src="{{ r.imagen.url }}" alt=""> </td>
                     <td><a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Ver_Ingrediente" data-dismiss="modal">Ver Mas</a></td>
                     <td><a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Ver_Elaboracion" data-dismiss="modal">Ver Mas</a></td>
                     <td>{{ r.fecha | date }}</td>
