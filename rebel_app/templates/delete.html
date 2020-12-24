@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<form method="post">
+    <H1>SE ELIMINO EL PRODUCTO CON EXITO!</H1>{% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
+{% endblock %}
